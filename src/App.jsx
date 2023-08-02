@@ -1,15 +1,21 @@
 import "./App.css";
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 
 import { RefContext, RefProvider } from "./components/RefContext";
 import Binary from "./components/Binary";
 import Menu from "./components/Menu";
 
+import MainMenu from "./components/MainMenu.jsx";
+
 const Root = ({ data }) => {
+  // const [data, setData] = useState(data);
   return (
-    <RefProvider>
-      <App data={data} />
-    </RefProvider>
+    <>
+      {/* <MainMenu setData={setData} /> */}
+      <RefProvider>
+        <App data={data} />
+      </RefProvider>
+    </>
   );
 };
 

@@ -4,6 +4,8 @@ import Planet from "./Planet";
 import Star from "./Star";
 
 const Binary = ({ data }) => {
+  if (!data) return;
+
   const ref = useRef();
   const { addRef } = useContext(RefContext);
   const name = data.name ? data.name[0] : "Unnamed binary";
@@ -13,7 +15,15 @@ const Binary = ({ data }) => {
   }, [name, addRef]);
 
   return (
-    <div className="binary" ref={ref} data-name={name}>
+    <div
+      className="binary"
+      ref={ref}
+      data-name={name}
+      onClick={(e) => {
+        e.stopPropagation();
+        console.log(ref.current);
+      }}
+    >
       {/* <p>Binary: {name}</p> */}
       {data.star &&
         data.star.map((star, index) => <Star key={index} data={star} />)}

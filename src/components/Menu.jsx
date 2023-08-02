@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { RefContext } from "./RefContext";
 
 const Menu = ({ data }) => {
+  if (!data) return;
+
   const { refs } = useContext(RefContext);
 
   const handleClick = (name) => {
@@ -9,7 +11,7 @@ const Menu = ({ data }) => {
   };
 
   const generateMenuItems = (items) => {
-    return items.map((item, index) => {
+    return items?.map((item, index) => {
       const name = item.name ? item.name[0] : "Unnamed";
 
       let children = [];
