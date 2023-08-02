@@ -5,10 +5,13 @@ import { RefContext, RefProvider } from "./components/RefContext";
 import Binary from "./components/Binary";
 import Menu from "./components/Menu";
 
-import MainMenu from "./components/MainMenu.jsx";
+// import MainMenu from "./components/MainMenu.jsx";
 
 const Root = ({ data }) => {
   // const [data, setData] = useState(data);
+
+  console.log({ data });
+
   return (
     <>
       {/* <MainMenu setData={setData} /> */}
