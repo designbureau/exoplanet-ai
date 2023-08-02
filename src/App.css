@@ -1,0 +1,39 @@
+body,
+html {
+  background: black;
+}
+* {
+  font-size: 11px;
+}
+
+.star {
+  background-color: yellow;
+  border-radius: 100000px;
+  width: 300px;
+  height: 300px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.planet {
+  background-color: blue;
+  border-radius: 100000px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.binary {
+  margin: 20px auto;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
