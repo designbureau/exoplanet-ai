@@ -10,8 +10,8 @@ const Menu = ({ data }) => {
     console.log(`${name} ref`, refs[name]);
   };
 
-  const generateMenuItems = (items) => {
-    return items?.map((item, index) => {
+  const generateMenuItems = (items, isBinary) => {
+    return items.map((item, index) => {
       const name = item.name ? item.name[0] : "Unnamed";
 
       let children = [];
@@ -28,11 +28,21 @@ const Menu = ({ data }) => {
       return (
         <ul key={index}>
           <li onClick={() => handleClick(name)}>{name}</li>
-          {children.length > 0 && generateMenuItems(children)}
+          {children.length > 0 && generateMenuItems(children, true)}
         </ul>
       );
     });
   };
+
+  return (
+    <nav>
+      <ul>
+        {data.star
+          ? generateMenuItems(data.star)
+          : generateMenuItems(data.binary, true)}
+      </ul>
+    </nav>
+  );
 
   return (
     <nav>
